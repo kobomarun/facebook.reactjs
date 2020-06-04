@@ -11,7 +11,7 @@ export const  Login_User =  user => async dispatch => {
     })
     .then(response => response.json())
     .then(response => {
-        if(response.data.success) {
+        if(response.success) {
             dispatch({
                 type: USER_LOGIN,
                 payload: response.data

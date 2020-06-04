@@ -13,14 +13,15 @@ function mapDispatchToState(dispatch) {
 const Login = (props) => {
     const [ email, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [text, setLoginText ] =useState('Login')
 
     function handleLogin(e) {
         e.preventDefault();
+        setLoginText("Please wait....")
         let data = {
             email,
             password
         }
-console.log('my',data)
         props.Login_User(data)
     }
   return (
@@ -30,7 +31,7 @@ console.log('my',data)
         <input type="text" placeholder="Email Address" onChange={e =>  setUsername(e.target.value)}  value={email} required />
         <input type="Password" placeholder="Password" onChange={ e =>  setPassword(e.target.value)} value={password} required />
         <div className="submit">
-          <input type="submit" value="Login" />
+          <input type="submit" value={text} />
         </div>
         <span className="forget-pass">
           <Link to="#">Forgot Password?</Link>
