@@ -1,5 +1,4 @@
-import { USER_LOGIN, ERROR_LOGIN } from './constants';
-import { useHistory } from 'react-router-dom'
+import { USER_LOGIN, ERROR_LOGIN, ADD_CATEGORY } from './constants';
 
 
 export const  Login_User =  user => async dispatch => {
@@ -30,4 +29,11 @@ export const  Login_User =  user => async dispatch => {
         }
     })
     
+}
+
+export const addCategory = (payload) =>  {
+    return {
+        type:ADD_CATEGORY,
+        payload
+    }
 }

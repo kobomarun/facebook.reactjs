@@ -41,7 +41,6 @@ body{
 /*--strat-login-form--*/
 
 .login-form {
-	/* background: url(../images/bgf.png) no-repeat 100% 0%; */
 	background-color: #3C67B5;
 	background-size: 100%;
 	width:22%;
@@ -191,6 +190,13 @@ form{
 }
 .copy-right p a:hover{
 	color:#fff;
+}
+.add-input {
+	background-color: #3C67B5;
+	background-size: 100%;
+	width:22%;
+	margin: 12% auto 4% auto;
+ 	padding-bottom:6em;
 }
 /*----//end-copy-right-----*/
 /*----start-responsive design-----*/
@@ -366,8 +372,9 @@ form{
 }
 
 .dashboard > h1 {
-	font-size: 20px;
+	font-size: 22px;
 	color: #28344B;
+	text-align: center;
 }
 
 .dashboard-card-holder {
@@ -397,3 +404,48 @@ form{
 	color: #fff;
 }
 
+.main-content {
+	margin:20px auto;
+	border-radius: 5px;
+	align-items: center;
+	background-color: #f9f9f9;
+	height: auto;
+	width: 700px;
+	padding: 20px;
+}
+.f-right {
+	float: right;
+}
+
+.btn-category {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.main-content .form {
+	display: block;
+}
+.form-holder {
+	margin-top: 30px;
+	margin-left:0;
+}
+
+.form-holder input[type="text"] {
+	width:300px;
+	height: 33px;
+	padding-left: 10px;
+	border: 1px solid #3460A8;
+	background-color: #fff;
+}
+
+.form-holder input[type="submit"] {
+	width:130px;
+	height: 35px;
+	margin-left: 15px;
+	padding-left: 10px;
+	background-color:#3460A8;	
+	color:#fff;
+	border:none;
+	cursor: pointer;
+	border-radius: 5px;
+}

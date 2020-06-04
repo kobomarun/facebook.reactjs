@@ -1,9 +1,11 @@
-import { USER_LOGIN, ERROR_LOGIN } from '../actions/constants';
+import { USER_LOGIN, ERROR_LOGIN,ADD_CATEGORY } from '../actions/constants';
 
 const initialState = {
     user: [],
-    error_login:''
+    error_login:'',
+    categories:[]
 };
+
 
 
 export function loginReducer(state=initialState, action) {
@@ -21,4 +23,15 @@ export function loginReducer(state=initialState, action) {
             return state
     }
 
+}
+
+export function addCategoryReducer(state = initialState, action) {
+    switch(action.type) {
+        case ADD_CATEGORY:
+            return Object.assign({}, state, {
+                categories:state.categories.concat(action.payload)
+            });
+    default:
+        return state
+    }
 }
