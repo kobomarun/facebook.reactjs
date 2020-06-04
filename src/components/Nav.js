@@ -1,8 +1,16 @@
 import React from "react";
+import { useHistory } from 'react-router-dom'
 import Logo from '../logo.png';
 import "../style.css";
 
-const Nav = ({logOut}) => {
+const Nav = () => {
+  const history = useHistory()
+  const logOut = () => {
+    alert('Logging out')
+    localStorage.removeItem('auth');
+    window.location.href = '/'
+    history.push('/')
+}
   return (
     <nav className="nav">
       <div className="nav-items">
@@ -12,12 +20,16 @@ const Nav = ({logOut}) => {
         <input
           type="text"
           className="searchform"
-          placeholder="Search Faceclone"
+          placeholder="Search for businesses here"
         />
       </div>
-      <div>
+     {
+       localStorage.getItem('auth') && (
+        <div>
         <button onClick={logOut}>logout</button>
       </div>
+       )
+     }
     </nav>
   );
 };

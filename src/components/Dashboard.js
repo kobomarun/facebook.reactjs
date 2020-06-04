@@ -1,27 +1,28 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import '../style.css'
-import { useHistory } from 'react-router-dom'
+import { connect } from 'react-redux';
 import LeftSideBar from './sidebar/LeftSideBar';
 import RightSideBar from './sidebar/RightSideBar';
-import Nav from './Nav';
-
+import '../style.css'
 
 const Dashboard = (props) => {
-    const history = useHistory()
-
-    const logOut = () => {
-        alert('Logging out')
-        localStorage.removeItem('auth');
-        history.push('/')
-    }
     return (
         <div className="wrapper">
-            <Nav logOut={logOut}/>
             <div className="main">
                <LeftSideBar profileName={props.state.name} />
-                <section>
-                    Main Section
+                <section className="dashboard">
+                    {/* <h1>Dashboard</h1> */}
+                    <div className="dashboard-card-holder ">
+                    <div className="small-card">
+                        <p className="title">Number of Business</p>
+                        <p className="num">0</p>
+                    </div>
+                    <div className="small-card">
+                        <p className="title">Number of Categories</p>
+                        <p className="num">0</p>
+                    </div>
+                    
+                    </div>
+                    
                 </section>
                 <RightSideBar />
             </div>
