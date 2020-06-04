@@ -6,8 +6,9 @@ import { addCategory } from '../../actions';
 import '../../style.css'
 
 const Category = (props) => {
-    const [ form, showForm ] = useState(false)
-    const [category, setCategory] = useState('')
+    const [ form, showForm ] = useState(false);
+    const [category, setCategory] = useState('');
+    const [ alert, setAlert ] = useState(false)
 
     //add category function
     function handleSubmit(e) {
@@ -18,6 +19,8 @@ const Category = (props) => {
             name:category
         }
         props.addCategory(data)
+        setCategory('')
+        setAlert(true)
     }
 
     return (
@@ -41,7 +44,7 @@ const Category = (props) => {
                                     <input type="submit" value="Add Category" className="btn-submit" />
                                 </form>
                             )
-                        }
+                        }{ alert && (<div className="alert"> Category successfully added</div>) }
                     </div>
                     
                 </section>

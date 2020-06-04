@@ -5,7 +5,6 @@ import Profile from '../../profile.png'
 import '../../style.css'
 
 const LeftSideBar = (props) => {
-    console.log('props',props.state)
     return (
         <aside className="leftsidebar">
             <div className="details">
@@ -14,16 +13,16 @@ const LeftSideBar = (props) => {
             </div>
             <div className="menu">
                <div className="menu-item">
-               <Link to="/add-category">Create Categories</Link>
+                    <Link to="/add-category">Create Categories</Link>
                </div>
                <div className="menu-item">
-               <Link>View All Categories</Link>
+                    <Link to="">View All Categories</Link>
                </div>
                <div className="menu-item">
-               <Link>Create Business</Link>
+                    <Link to="">Create Business</Link>
                </div>
-               <div className="menu-item">
-               <Link>View All Businesses</Link>
+                    <div className="menu-item">
+               <Link to="">View All Businesses</Link>
                </div>
             </div>
         </aside>
