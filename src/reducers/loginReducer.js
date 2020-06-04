@@ -1,7 +1,8 @@
-import { USER_LOGIN } from '../actions/constants';
+import { USER_LOGIN, ERROR_LOGIN } from '../actions/constants';
 
 const initialState = {
-    user: []
+    user: [],
+    error_login:''
 };
 
 
@@ -11,6 +12,11 @@ export function loginReducer(state=initialState, action) {
             return Object.assign({}, state,  {
                 user:state.user.concat(action.payload)
             });
+            case ERROR_LOGIN:
+                return {
+                    error_login:action.text
+                }
+
         default:
             return state
     }

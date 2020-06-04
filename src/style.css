@@ -285,8 +285,8 @@ form{
 /*----//end-responsive design-----*/
 
 .wrapper {
-	display: flex;
-	flex-wrap: nowrap;;
+	/* display: flex;
+	flex-wrap: nowrap;; */
 }
 
 .nav {
@@ -311,5 +311,28 @@ form{
 	border:none;
 	margin-left:-15px;
 	padding-left:20px
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	margin:20px 20px;
+}
+
+.details {
+	display:flex;
+	align-content: space-around;
+}
+
+.details > img {
+	width: 50px;
+	border-radius: 50%;
+}
+
+.profile-name {
+	position: relative;
+	top:15px;
+	left:15px;
+	font-size:18px
 }
 

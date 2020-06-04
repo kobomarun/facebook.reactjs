@@ -41,6 +41,11 @@ const Login = (props) => {
   );
 };
 
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+      state
+  }
+}
 
-
-export default connect(null, mapDispatchToState)(Login);
+export default connect(mapStateToProps, mapDispatchToState)(Login);

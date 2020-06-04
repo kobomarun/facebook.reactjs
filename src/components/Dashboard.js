@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import '../style.css'
-import Logo from '../logo.png';
 import { useHistory } from 'react-router-dom'
+import LeftSideBar from './sidebar/LeftSideBar';
+import RightSideBar from './sidebar/RightSideBar';
+import Nav from './Nav';
 
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     const history = useHistory()
 
     const logOut = () => {
@@ -14,19 +17,24 @@ const Dashboard = () => {
     }
     return (
         <div className="wrapper">
-            <div className="nav">
-                <div className="nav-items">
-                    <img src={Logo} />
-                </div>
-                <div className="nav-items">
-                    <input type="text" className="searchform" placeholder="Search Faceclone" />
-                </div>
-                <div>
-                    <button onClick={logOut}>logout</button>
-                </div>
+            <Nav logOut={logOut}/>
+            <div className="main">
+               <LeftSideBar profileName={props.state.name} />
+                <section>
+                    Main Section
+                </section>
+                <RightSideBar />
             </div>
+            
         </div>
     )
 }
 
-export default Dashboard
+const mapStateToProps = state => {
+    console.log('all',state);
+    return {
+        state:JSON.parse(localStorage.getItem('auth'))
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard)
