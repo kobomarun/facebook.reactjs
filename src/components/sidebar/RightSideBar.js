@@ -4,7 +4,7 @@ import '../../style.css'
 const RightSideBar = () => {
     return (
         <aside>
-            Right Sidebar
+            {``}
         </aside>
     )
 }
