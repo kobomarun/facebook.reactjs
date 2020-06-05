@@ -16,10 +16,10 @@ const LeftSideBar = (props) => {
                     <Link to="/add-category">Create Categories</Link>
                </div>
                <div className="menu-item">
-                    <Link to="">View All Categories</Link>
+                    <Link to="/">View All Categories</Link>
                </div>
                <div className="menu-item">
-                    <Link to="">Create Business</Link>
+                    <Link to="/add-business">Create Business</Link>
                </div>
                     <div className="menu-item">
                <Link to="">View All Businesses</Link>

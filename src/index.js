@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard';
 import ProtectedRoute from './ProtectedRoute'
 import Nav from './components/Nav';
 import Category from './components/category/Category';
+import Business from './components/business/Business';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route   path="/app" component={App} />
       <ProtectedRoute  path="/dashboard" component={Dashboard} />
       <ProtectedRoute  path="/add-category" component={Category} />
+      <ProtectedRoute  path="/add-business" component={Business} />
     </Switch>
   </BrowserRouter>
   </Provider>,

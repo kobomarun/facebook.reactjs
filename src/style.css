@@ -436,8 +436,37 @@ form{
 	padding-left: 10px;
 	border: 1px solid #3460A8;
 	background-color: #fff;
+	margin: 10px;
+}
+.form-holder input[type="file"] {
+	width:300px;
+	height: 33px;
+	padding-left: 10px;
+	border: 1px solid #3460A8;
+	background-color: #fff;
+	margin: 10px;
+	top:-60px;
+	position: relative;
+	;
 }
 
+.form-holder .label {
+	float: left;
+	margin-right:120px ;
+}
+
+.form-holder input[type="checkbox"] {
+	margin-bottom: 10px;
+	margin-top: -70px;
+	width:15px;
+	height: 15px;
+	margin-left: 40px;
+
+}
+
+.form-holder .cat-display {
+	display: block
+}
 .form-holder input[type="submit"] {
 	width:130px;
 	height: 35px;
@@ -448,6 +477,15 @@ form{
 	border:none;
 	cursor: pointer;
 	border-radius: 5px;
+}
+
+textarea {
+	width:300px;
+	height: 63px;
+	padding-left: 10px;
+	border: 1px solid #3460A8;
+	background-color: #fff;
+	margin: 10px;
 }
 .alert {
 	padding: 10px;
