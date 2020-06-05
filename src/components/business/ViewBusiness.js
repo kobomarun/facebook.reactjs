@@ -6,7 +6,10 @@ import '../../style.css'
 const ViewBusiness = (props) => {
     const { business }  = props.state.business;
     let count = 1;
-console.log(props)
+
+    function deleteBusiness(id) {
+        alert(id)
+    }
     return (
         <div className="wrapper">
             <div className="main">
@@ -21,8 +24,8 @@ console.log(props)
                                     <th>Business Name</th>
                                     <th>Phone Number</th>
                                     <th>Email</th>
-                                    <th>Website</th>
-                                   
+                                    <th>Category</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,6 +40,8 @@ console.log(props)
                                                 <td>{row.categories.map(cat => (
                                                     <span key={cat.id}>{cat.name}, </span>
                                                 ))}</td>
+                                                <td><button>Edit</button> | 
+                                                <button onClick={() => deleteBusiness(row.id)}>Delete</button></td>
                                                 
                                             </tr>
                                         )
@@ -56,6 +61,7 @@ console.log(props)
 
 
 const mapStateToProps = state => {
+    console.log(state.business)
     return  {
         state
     }

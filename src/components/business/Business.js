@@ -35,11 +35,13 @@ const Business = (props) => {
     }
     const handleInputChange = (event) => {
       event.persist();
+      let id = Math.floor(Math.random() * 1000)
+      inputs.id = id;
       setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
     }
     function onSelect(selectedList, selectedItem) {
         inputs.categories = selectedList
-        console.log(inputs)
+        console.log(selectedItem)
     }
   console.log('in',props)
     return (
