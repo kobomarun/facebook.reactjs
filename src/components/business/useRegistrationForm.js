@@ -1,10 +1,16 @@
 import  {useState} from 'react'
+import {  addBusiness } from '../../actions/'
+import { connect } from 'react-redux';
 
-export const useRegistrationForm = (callback) => {
+ export const useRegistrationForm = (props) => {
+   console.log('re',props)
     const [inputs, setInputs] = useState({});
     const handleSubmit = (event) => {
       if (event) {
         event.preventDefault();
+        console.log('from', inputs);
+         addBusiness(inputs)
+        
       }
     }
     const handleInputChange = (event) => {
@@ -17,3 +23,13 @@ export const useRegistrationForm = (callback) => {
       inputs
     };
   }
+
+  function mapDispatchToProps(dispatch) {
+    return {
+      addBusiness: data => dispatch(addBusiness(data))
+    }
+  }
+
+ 
+
+  export default connect(null,mapDispatchToProps)(useRegistrationForm)

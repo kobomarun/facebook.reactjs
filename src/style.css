@@ -494,3 +494,34 @@ textarea {
 	background:#a0f684;
 	margin-top: 20px;
 }
+.empty {
+	text-align: center;
+}
+.empty a {
+	color:#000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.business {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  .business td, .business th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  .business tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .business tr:hover {background-color: #ddd;}
+  
+  .business th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #3460A8;
+	color: white;
+  }

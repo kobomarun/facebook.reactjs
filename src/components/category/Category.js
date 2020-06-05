@@ -10,7 +10,7 @@ const Category = (props) => {
     const [category, setCategory] = useState('');
     const [ alert, setAlert ] = useState(false)
 
-    //add category function
+    
     function handleSubmit(e) {
         e.preventDefault();
         let randNum = Math.floor(Math.random() * 100)
@@ -44,7 +44,7 @@ const Category = (props) => {
                                     <input type="submit" value="Add Category" className="btn-submit" />
                                 </form>
                             )
-                        }{ alert && (<div className="alert"> Category successfully added</div>) }
+                        }{ alert && (<div className="alert"> Category successfully added`</div>) }
                     </div>
                     
                 </section>

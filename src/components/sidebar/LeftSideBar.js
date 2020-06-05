@@ -13,6 +13,9 @@ const LeftSideBar = (props) => {
             </div>
             <div className="menu">
                <div className="menu-item">
+                    <Link to="/dashboard">Dashboard</Link>
+               </div>
+               <div className="menu-item">
                     <Link to="/add-category">Create Categories</Link>
                </div>
                <div className="menu-item">
@@ -22,7 +25,7 @@ const LeftSideBar = (props) => {
                     <Link to="/add-business">Create Business</Link>
                </div>
                     <div className="menu-item">
-               <Link to="">View All Businesses</Link>
+               <Link to="/view-business">View All Businesses</Link>
                </div>
             </div>
         </aside>
