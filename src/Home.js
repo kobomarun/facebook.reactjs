@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import LeftSideBar from './components/sidebar/LeftSideBar';
 import './style.css'
 
@@ -17,6 +18,7 @@ const Home = (props) => {
                 <section className="dashboard">
                 <h1 className="ft-left">Business Directory</h1>
                     <div className="home-cardholder">
+                    <Link to="/login">Login</Link>
                         { props.state.business.business.map(row => {
                             return (
                                 <div className="card">
