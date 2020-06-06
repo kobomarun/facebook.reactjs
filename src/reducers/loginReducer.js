@@ -1,4 +1,4 @@
-import { ADD_CATEGORY, ADD_BUSINESS, DELETE_BUSINESS } from '../actions/constants';
+import { ADD_CATEGORY, ADD_BUSINESS, DELETE_BUSINESS,SEARCH } from '../actions/constants';
 
 const initialState = {
     error_login:'',
@@ -39,18 +39,32 @@ export function addBusiness(state =initialState, action) {
     }
 }
 
-export function deleteBusiness(state = initialState, action) {
+export function deleteBusiness(state = initialState.business, action) {
     switch(action.type) {
        
         case DELETE_BUSINESS:
-            console.log('rude',action.business)
-            let me = action.business.filter((data, i) => data.id !== action.id)
-            console.log('f',me)
-            return Object.assign({}, state, {
-                business:state.business.concat(me)
-            })
+            let item = []
+                    state.each(directory => { 
+                        item.push(Object.assign({}, directory))
+                    })
+                
+                    let newDirectory = item.filter(item => {
+                    if(item.id !== action.id) {
+                            // store.remove(id)
+                            return item
+                        }
+                    })
+                    console.log('delete',newDirectory)
             default:
         return state
     }
     
+}
+
+export function search(state = initialState.business, action) {
+    switch(action.type) {
+        case SEARCH:
+            return state
+    }
+    return state
 }

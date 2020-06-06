@@ -1,4 +1,4 @@
-import { ERROR_LOGIN, ADD_CATEGORY, ADD_BUSINESS, DELETE_BUSINESS } from './constants';
+import { ADD_CATEGORY, ADD_BUSINESS, DELETE_BUSINESS , SEARCH} from './constants';
 
 
 
@@ -23,5 +23,13 @@ export const deleteBusiness = (id,business) => {
         type: DELETE_BUSINESS,
         id,
         business
+    }
+}
+
+export const search = (payload) => {
+    return {
+        type: SEARCH,
+        payload
+
     }
 }

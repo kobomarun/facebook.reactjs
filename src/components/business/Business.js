@@ -27,9 +27,11 @@ const Business = (props) => {
              email:'',
              description:'',
              image:'',
-             phone:''
+             phone:'',
+
          })
-         getCategory([])
+         window.location.href="/view-business"
+        //  getCategory('')
         
       }
     }
@@ -91,11 +93,11 @@ const Business = (props) => {
                                         name="website"
                                         value={inputs.website}
                                         onChange={handleInputChange}
-                                        
+                                        required
                                     />
                                      <input 
-                                        type="file" 
-                                        placeholder="Website" 
+                                        type="text" 
+                                        placeholder="Enter: https://placeimg.com/160/160/any" 
                                         name="image"
                                         value={inputs.image}
                                         onChange={handleInputChange}

@@ -552,6 +552,7 @@ textarea {
 .card .title {
 	font-size: 14px;
 	text-align: center;
+	font-weight: bold;
 }
 .card .description {
 	margin-top: 5px;
@@ -566,4 +567,19 @@ textarea {
 	font-size: 12px;
 	font-style: italic;
 	text-transform: lowercase;
+}
+.nav-items a{
+	color: #fff
+}
+
+.loginb {
+	
+	margin-left:250px;
+	float:right;
+	padding: 10px;
+}
+
+.login-div {
+	float: right;
+	cursor: pointer;
 }

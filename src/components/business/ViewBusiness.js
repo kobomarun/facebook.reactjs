@@ -11,7 +11,7 @@ const ViewBusiness = (props) => {
     function deleteBusiness(id,business) {
         alert(id)
         console.log('id',business)
-        props.deleteBusiness(id,business)
+        // props.deleteBusiness(id,business)
     }
     return (
         <div className="wrapper">
