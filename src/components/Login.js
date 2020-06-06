@@ -16,8 +16,8 @@ const Login = (props) => {
         if(email == props.state.user.email && props.state.user.password === password) {
           alert('Login Successful')
           localStorage.setItem('auth',1)
-          props.history.push("/dashboard")
-          // window.location.href="/dashboard" 
+          // props.history.push("/dashboard")
+          window.location.href="/dashboard" 
       } else {
           alert('invalid credentials')
           setLoginText("Login")

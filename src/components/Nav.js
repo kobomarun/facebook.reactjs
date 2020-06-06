@@ -40,11 +40,7 @@ const Nav = () => {
       </div>
        )
      }
-      {
-          !localStorage.getItem('auth') && (
-            <div className="login-div"><Link to="/login" ><button className="loginb">Login </button></Link></div>
-          )
-        }
+      
     </nav>
   );
 };
