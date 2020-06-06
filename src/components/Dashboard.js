@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import LeftSideBar from './sidebar/LeftSideBar';
 import RightSideBar from './sidebar/RightSideBar';
 import '../style.css'
-import Category from './category/Category';
 
 const Dashboard = (props) => {
    const business = props.state.business.business;
@@ -19,7 +18,7 @@ const Dashboard = (props) => {
                         <p className="title">Number of Business</p>
                          <p className="num">{business.length}</p>
                          {
-                          business.length == 0 ? (
+                          business.length === 0 ? (
                               <p className="empty">No Business has been created.<Link to="/add-business"> Click here to create business</Link></p>
                           )   :''
                          }

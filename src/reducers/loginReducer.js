@@ -1,30 +1,20 @@
-import { USER_LOGIN, ERROR_LOGIN,ADD_CATEGORY, ADD_BUSINESS } from '../actions/constants';
+import { ADD_CATEGORY, ADD_BUSINESS, DELETE_BUSINESS } from '../actions/constants';
 
 const initialState = {
-    user: [],
     error_login:'',
     categories:[],
     business:[]
 };
 
-
-
-export function loginReducer(state=initialState, action) {
-    switch(action.type) {
-        case USER_LOGIN:
-            return Object.assign({}, state,  {
-                user:state.user.concat(action.payload)
-            });
-            case ERROR_LOGIN:
-                return {
-                    error_login:action.text
-                }
-
-        default:
-            return state
-    }
-
+const userState = {
+    email: 'admin@email.com',
+    password: '@Password123'
 }
+export function userReducer(state = userState, action) {
+    return state
+}
+
+
 
 export function addCategoryReducer(state = initialState, action) {
     switch(action.type) {
@@ -42,8 +32,25 @@ export function addBusiness(state =initialState, action) {
         case ADD_BUSINESS:
             return Object.assign({}, state, {
                 business:state.business.concat(action.payload)
-            });
+            })
+        
     default:
         return state
     }
+}
+
+export function deleteBusiness(state = initialState, action) {
+    switch(action.type) {
+       
+        case DELETE_BUSINESS:
+            console.log('rude',action.business)
+            let me = action.business.filter((data, i) => data.id !== action.id)
+            console.log('f',me)
+            return Object.assign({}, state, {
+                business:state.business.concat(me)
+            })
+            default:
+        return state
+    }
+    
 }

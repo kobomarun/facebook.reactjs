@@ -9,7 +9,7 @@ const LeftSideBar = (props) => {
         <aside className="leftsidebar">
             <div className="details">
                 <img src={Profile} alt="profile" />
-                <div className="profile-name"> {props.state.name}</div>
+                <div className="profile-name"> {props.state.user.email}</div>
             </div>
             <div className="menu">
                <div className="menu-item">
@@ -35,7 +35,7 @@ const LeftSideBar = (props) => {
 const mapStateToProps = state => {
     
     return {
-        state:JSON.parse(localStorage.getItem('auth'))
+        state
     }
 }
 export default connect(mapStateToProps)(LeftSideBar)

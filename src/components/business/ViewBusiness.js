@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import LeftSideBar from './../sidebar/LeftSideBar';
+import { deleteBusiness }  from '../../actions/index'
 import '../../style.css'
 
 const ViewBusiness = (props) => {
     const { business }  = props.state.business;
     let count = 1;
 
-    function deleteBusiness(id) {
+    function deleteBusiness(id,business) {
         alert(id)
+        console.log('id',business)
+        props.deleteBusiness(id,business)
     }
     return (
         <div className="wrapper">
@@ -41,7 +44,7 @@ const ViewBusiness = (props) => {
                                                     <span key={cat.id}>{cat.name}, </span>
                                                 ))}</td>
                                                 <td><button>Edit</button> | 
-                                                <button onClick={() => deleteBusiness(row.id)}>Delete</button></td>
+                                                <button onClick={() => deleteBusiness(row.id, business)}>Delete</button></td>
                                                 
                                             </tr>
                                         )
@@ -58,7 +61,11 @@ const ViewBusiness = (props) => {
     )
 }
 
-
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteBusiness: (data, data2) => dispatch(deleteBusiness(data,data2))
+    }
+}
 
 const mapStateToProps = state => {
     console.log(state.business)
@@ -67,4 +74,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(ViewBusiness)
+export default connect(mapStateToProps, mapDispatchToProps)(ViewBusiness)

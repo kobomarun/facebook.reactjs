@@ -11,14 +11,15 @@ import Nav from './components/Nav';
 import Category from './components/category/Category';
 import Business from './components/business/Business';
 import ViewBusiness from './components/business/ViewBusiness';
+import Home from './Home';
 
 ReactDOM.render(
   <Provider store={store}>
   <BrowserRouter>
   <Nav />
     <Switch>
-      <Route exact path='/' component={Login} />
-      <Route   path="/app" component={App} />
+      <Route  path='/login' component={Login} />
+      <Route exact path="/" component={Home} />
       <ProtectedRoute  path="/dashboard" component={Dashboard} />
       <ProtectedRoute  path="/add-category" component={Category} />
       <ProtectedRoute  path="/add-business" component={Business} />

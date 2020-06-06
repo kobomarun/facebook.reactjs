@@ -1,19 +1,20 @@
 import { createStore, applyMiddleware,compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
-import { loginReducer, addCategoryReducer, addBusiness } from './reducers/loginReducer';
+import { addCategoryReducer, addBusiness,deleteBusiness, userReducer } from './reducers/loginReducer';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 const allReducers = combineReducers({
-  user:loginReducer,
   category:addCategoryReducer,
-  business:addBusiness
+  business:addBusiness,
+  delete_business:deleteBusiness,
+  user: userReducer
 })
 
 const persistConfig = {
-  key: "user",
+  key: "business",
   storage: storage,
-  whitelist: ["user", "category","business"] 
+  whitelist: ["category","business","user"] 
 };
   const persistedReducer = persistReducer(persistConfig, allReducers)
 

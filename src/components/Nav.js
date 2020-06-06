@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from 'react-router-dom'
-import Logo from '../logo.png';
 import "../style.css";
 
 const Nav = () => {
@@ -14,7 +13,7 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="nav-items">
-        <img src={Logo} alt="logo" />
+       <h2>Business Directory</h2>
       </div>
       <div className="nav-items">
         <input
