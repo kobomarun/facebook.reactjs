@@ -18,7 +18,6 @@ const Home = (props) => {
                 <section className="dashboard">
                 <h1 className="ft-left">Business Directory</h1>
                     <div className="home-cardholder">
-                    <Link to="/login">Login</Link>
                         { props.state.business.business.map(row => {
                             return (
                                 <div className="card">
