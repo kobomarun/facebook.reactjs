@@ -18,7 +18,8 @@ const Home = (props) => {
                 <section className="dashboard">
                 <h1 className="ft-left">Business Directory</h1>
                     <div className="home-cardholder">
-                        { props.state.business.business.map(row => {
+                        { props.state.business.business.length == 0 && (<h2 className="not-listed">No business has been listed. Please contact the admisitrator</h2>)}
+                        {props.state.business.business.map(row => {
                             return (
                                 <div className="card">
                                     <img src={row.image} alt=""  width="150"/>
